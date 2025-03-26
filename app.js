@@ -88,6 +88,14 @@ async function processImage(imageData) {
     const result = await Tesseract.recognize(imageData, "eng");
     const price = extractPrice(result.data.text);
 
+    const debugText = `
+      OCR Result: ${result.data.text}
+      Extracted Price: ${price}
+      Translated Price: ${translatePrice(price)}
+    `;
+
+    debugTextElement.textContent = debugText;
+
     if (price) {
       originalPriceElement.textContent = price;
       const translated = translatePrice(price);
