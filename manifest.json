@@ -2,7 +2,7 @@
   "name": "Price Translator PWA",
   "short_name": "PriceTranslator",
   "description": "A PWA that translates prices using the CHARLESTON cipher",
-  "start_url": "/",
+  "start_url": "https://andrantis.github.io/south-carolina/",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#4CAF50",
