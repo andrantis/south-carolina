@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+    <!-- Background circle -->
+    <circle cx="256" cy="256" r="240" fill="#4CAF50"/>
+    
+    <!-- Dollar sign -->
+    <path d="M256 120v272M200 184h112M200 328h112" 
+          stroke="white" 
+          stroke-width="32" 
+          stroke-linecap="round" 
+          stroke-linejoin="round"/>
+    
+    <!-- Translation arrows -->
+    <path d="M120 256h80M312 256h80" 
+          stroke="white" 
+          stroke-width="24" 
+          stroke-linecap="round"/>
+    <path d="M200 256l-40 40M200 256l-40-40M312 256l40 40M312 256l40-40" 
+          stroke="white" 
+          stroke-width="24" 
+          stroke-linecap="round" 
+          stroke-linejoin="round"/>
+</svg> 

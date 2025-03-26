@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Price Translator PWA</title>
+    <link rel="manifest" href="manifest.json" />
+    <link rel="stylesheet" href="styles.css" />
+    <meta name="theme-color" content="#4CAF50" />
+    <script src="https://unpkg.com/tesseract.js@v2.1.1/dist/tesseract.min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Price Translator</h1>
+      <div class="camera-container">
+        <video id="video" autoplay playsinline></video>
+        <canvas id="canvas" style="display: none"></canvas>
+      </div>
+      <div class="controls">
+        <button id="captureBtn">Capture Price</button>
+      </div>
+      <div class="results">
+        <div class="result-box">
+          <h3>Original Price:</h3>
+          <p id="originalPrice">-</p>
+        </div>
+        <div class="result-box">
+          <h3>Translated Price:</h3>
+          <p id="translatedPrice">-</p>
+        </div>
+      </div>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>

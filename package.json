@@ -1,0 +1,11 @@
+{
+  "name": "price-translator-pwa",
+  "version": "1.0.0",
+  "description": "PWA for translating prices using the CHARLESTON cipher",
+  "scripts": {
+    "generate-icons": "node generate-icons.js"
+  },
+  "dependencies": {
+    "sharp": "^0.32.6"
+  }
+}
