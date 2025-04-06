@@ -85,17 +85,33 @@ function translatePrice(price) {
 // Process image with Tesseract OCR
 async function processImage(imageData) {
   try {
-    const result = await Tesseract.recognize(imageData, "eng");
-    const price = extractPrice(result.data.text);
+    // Ensure Tesseract is available
+    if (typeof Tesseract === "undefined") {
+      throw new Error("Tesseract library is not loaded.");
+    }
 
+    // Perform OCR
+    const result = await Tesseract.recognize(imageData, "eng");
+    console.log("OCR Result:", result.data.text);
+
+    // Extract price
+    const price = extractPrice(result.data.text);
+    console.log("Extracted Price:", price);
+
+    // Update debug text
     const debugText = `
       OCR Result: ${result.data.text}
-      Extracted Price: ${price}
-      Translated Price: ${translatePrice(price)}
+      Extracted Price: ${price || "None"}
+      Translated Price: ${price ? translatePrice(price) : "None"}
     `;
 
-    debugTextElement.textContent = debugText;
+    if (debugTextElement) {
+      debugTextElement.textContent = debugText;
+    } else {
+      console.warn("debugTextElement is not defined.");
+    }
 
+    // Update DOM elements
     if (price) {
       originalPriceElement.textContent = price;
       const translated = translatePrice(price);
